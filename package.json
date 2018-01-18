@@ -1,0 +1,30 @@
+{
+  "name": "my-blog",
+  "version": "0.0.0",
+  "engines": {
+    "node": "8.9.1"
+  },
+  "private": true,
+  "scripts": {
+    "dev": "nodemon --ext js,ejs ./bin/www",
+    "start": "node ./bin/www",
+    "stop": "pm2 stop myapp"
+  },
+  "dependencies": {
+    "body-parser": "~1.18.2",
+    "cookie-parser": "~1.4.3",
+    "cookie-session": "^2.0.0-beta.3",
+    "debug": "~2.6.9",
+    "ejs": "~2.5.7",
+    "express": "~4.15.5",
+    "mongoose": "^4.13.9",
+    "morgan": "~1.9.0",
+    "sequelize": "^4.31.2",
+    "serve-favicon": "~2.4.5",
+    "sqlite3": "^3.1.13"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.11",
+    "pm2": "^2.9.1"
+  }
+}

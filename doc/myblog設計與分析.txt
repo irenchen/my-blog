@@ -1,0 +1,94 @@
+************************************************
+JavaScript新的語法特性
+
+1. var, let, const
+
+2. Arrow function (lambda expression)
+
+3. Callback & Promise & async/await (非同步的處理方式)
+
+4. String template
+
+5. default argument
+
+6. object destructure
+
+
+*****************************************************
+系統功能需求:
+ 1.使用者登入(signin)/註冊(signup)/登出(signout)
+ 2.使用者可以瀏覽文章，發表文章，修改/刪除文章
+ 3.使用者可以針對某一篇文章新增留言
+ 4.使用者忘記密碼
+
+*****************************************************
+資料庫結構schema (畫出E-R Diagram)
+tables/collections:
+ - User (id/username/password...)
+ - Blog (id/title/body/author/comments/created...)
+ - Comment (id/body/author/blog/created...)
+
+******************************************************
+HTTP url請求路徑與樣板頁面
+routes and views:
+(routes/index.js)
+ - GET /        => render('index.ejs')
+ - GET /signup  => 回傳註冊頁面 render('signup.ejs')
+ - POST /signup => 新增使用者，redirect('/')或原本要進入的頁面
+ - GET /signin  => 回傳登入頁面 render('signin.ejs')
+ - POST /signin => 驗證使用者，登入使用者，redirect('/')或原本要進入的頁面
+ - GET /signout => 登出使用者，redirect('/')
+
+(routes/users.js)
+ - GET /users/:id => render('profile.ejs')
+
+(routes/blogs.js)
+ - GET /blogs            => 瀏覽所有blog文章，render('view-blogs.ejs')
+ - GET /blogs/new        => render('create-blogs.ejs')
+ - POST /blogs           => 新增文章，redirect('/blogs')
+ - GET /blogs/:id        => 瀏覽單一文章，render('view-blog.ejs')
+ - GET /blogs/:id/update => 更新單一文章，render('update-blog.ejs')
+ - PUT /blogs/:id        => 更新單一文章，redirect('/blogs/:id')
+ - GET /blogs/:id/delete => 刪除單一文章，redirect('/blogs')
+ - POST /blogs/:id/comments => 新增留言，redirect('/blogs/:id')
+
+**************************************************************
+Bootstrap 4
+ - starter template
+ - breakpoints (xs,sm,md,lg,xl) https://getbootstrap.com/docs/4.0/layout/grid/
+ - Button ( btn btn-info btn-lg )
+ - Card
+ - NavBar
+ - Form
+ - Input
+
+***************************************************************
+Validate user input
+ - 傳送表單之前，由前端處理
+ - joi https://www.npmjs.com/package/joi
+ - express-validator https://github.com/ctavan/express-validator
+
+**************************************************************
+Testing(Unit Test & Integration Test)
+ - mocha
+ - chai
+ - superagent/supertest
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
